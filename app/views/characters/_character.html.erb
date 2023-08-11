@@ -1,0 +1,12 @@
+</div>
+  <div id="<%= dom_id character %>">
+    <tr>
+      <th scope="row"><%= character.id %></th>
+      <td><%= character.name %></td>
+      <td><%= character.location %></td>
+      <td><%= character.house %></td>
+      <td><%= link_to "Mostrar", character %></td>
+      <td><%= link_to "Editar", edit_character_path(character) %></td>
+      <td><%= button_to "Destruir", @characters_path, method: :delete %></td>
+    </tr>
+</div>

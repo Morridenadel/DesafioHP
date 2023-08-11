@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+<div class="container">
+  <h1>Harry Potter</h1>
+   <%= link_to "New character", new_character_path %>
+
+<div id="character">
+  <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Locación</th>
+          <th scope="col">Casa</th>
+          <th scope="col" colspan="3">Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @character.each do |character| %>
+          <%= render character %>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="digg_pagination .page_info b">
+      <%= will_paginate(@character, :renderer => WillPaginate::ActionView::LinkRenderer) %>
+    </div>
+  </div>
+</div>
